@@ -22,43 +22,44 @@
                 <p>Provide details about the item you lost</p>
             </div>
 
-            <form>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
 
                 <div class="form-group">
                     <label>Item Name</label>
-                    <input type="text" placeholder="Enter item name">
+                    <input type="text" name="item_name" placeholder="Enter item name" required>
                 </div>
 
                 <div class="form-group">
                     <label>Category</label>
-                    <select>
-                        <option>Select category</option>
-                        <option>Electronics</option>
-                        <option>Books</option>
-                        <option>Accessories</option>
-                        <option>Documents</option>
-                        <option>Other</option>
+                    <select name="category" required>
+                        <option value="">Select category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Books">Books</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Documents">Documents</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Description</label>
-                    <textarea placeholder="Describe the lost item"></textarea>
+                    <textarea name="description" placeholder="Describe the lost item" required></textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Date Lost</label>
-                    <input type="date">
+                    <input type="date" name="date_lost" required>
                 </div>
 
                 <div class="form-group">
                     <label>Location Lost</label>
-                    <input type="text" placeholder="Where did you lose it?">
+                    <input type="text" name="location_lost" placeholder="Where did you lose it?" required>
                 </div>
 
                 <div class="form-group">
                     <label>Upload Image</label>
-                    <input type="file">
+                    <input type="file" name="image">
                 </div>
 
                 <button type="submit" class="submit-btn">
