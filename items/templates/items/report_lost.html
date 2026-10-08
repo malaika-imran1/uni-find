@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Lost Item - UniFind</title>
+
+    <link rel="stylesheet" href="{% static 'lostitem.css' %}">
+</head>
+
+<body>
+
+    <div class="lost-container">
+
+        <div class="lost-card">
+
+            <div class="lost-header">
+                <h1>Report Lost Item</h1>
+                <p>Provide details about the item you lost</p>
+            </div>
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label>Item Name</label>
+                    <input type="text" name="item_name" placeholder="Enter item name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select name="category" required>
+                        <option value="">Select category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Books">Books</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Documents">Documents</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" placeholder="Describe the lost item" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Date Lost</label>
+                    <input type="date" name="date_lost" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Location Lost</label>
+                    <input type="text" name="location_lost" placeholder="Where did you lose it?" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Image</label>
+                    <input type="file" name="image">
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Report Lost Item
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
