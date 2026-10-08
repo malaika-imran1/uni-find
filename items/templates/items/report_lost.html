@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Lost Item - UniFind</title>
+
+    <link rel="stylesheet" href="{% static 'lostitem.css' %}">
+</head>
+
+<body>
+
+    <div class="lost-container">
+
+        <div class="lost-card">
+
+            <div class="lost-header">
+                <h1>Report Lost Item</h1>
+                <p>Provide details about the item you lost</p>
+            </div>
+
+            <form>
+
+                <div class="form-group">
+                    <label>Item Name</label>
+                    <input type="text" placeholder="Enter item name">
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select>
+                        <option>Select category</option>
+                        <option>Electronics</option>
+                        <option>Books</option>
+                        <option>Accessories</option>
+                        <option>Documents</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea placeholder="Describe the lost item"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Date Lost</label>
+                    <input type="date">
+                </div>
+
+                <div class="form-group">
+                    <label>Location Lost</label>
+                    <input type="text" placeholder="Where did you lose it?">
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Image</label>
+                    <input type="file">
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Report Lost Item
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
