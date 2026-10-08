@@ -3,10 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
 
-def home(request):
-    return render(request, "malaikahomepage.html")
-
-
 def signup(request):
     if request.method == "POST":
 
